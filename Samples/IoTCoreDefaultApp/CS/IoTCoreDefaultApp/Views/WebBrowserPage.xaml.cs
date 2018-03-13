@@ -92,9 +92,10 @@ namespace IoTCoreDefaultApp
             if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
             {
                 ds = new List<string>();
-                ds.Add(Constants.WODUrl);
+                ds.Add(Constants.WindowsOnDevicesUrl);
+                ds.Add(Constants.IoTGitHubSamplesUrl);
                 ds.Add(Constants.IoTHacksterUrl);
-                ds.Add(Constants.IoTGitHubUrl);
+                ds.Add(Constants.BingHomePageUrl);
 
                 //Set the ItemsSource to be your filtered dataset
                 sender.ItemsSource = ds;
@@ -162,7 +163,7 @@ namespace IoTCoreDefaultApp
                 }
                 else
                 {
-                    WebAddressText.Text = Constants.WODUrl;
+                    WebAddressText.Text = Constants.WindowsOnDevicesUrl;
                     DoWebNavigate();
                 }
 
@@ -224,16 +225,6 @@ namespace IoTCoreDefaultApp
         /// <param name="args"></param>
         private void ContentView_NavigationStarting(object sender, WebViewNavigationStartingEventArgs args)
         {
-            //string url = "";
-            //try {
-            //    url = args.Uri.ToString();
-            //}
-            //finally
-            //{
-            //    WebAddressText.Text = url;
-            //    InProgress = true;
-            //}
-
             if (SkipNonUri( args.Uri.AbsoluteUri.ToString()) )
             {
                 InProgress = false;
@@ -242,13 +233,13 @@ namespace IoTCoreDefaultApp
             {
                 InProgress = true;
                 WebAddressText.IsSuggestionListOpen = false;
-                //WebAddressText.Text = args.Uri.ToString();
             }
             
             // Cancel navigation if URL is not allowed. (Implemetation of IsAllowedUri not shown.)
             if (!IsAllowedUri(args.Uri))
             {
                 args.Cancel = true;
+
                 //Check if this is taken care by Navigation Completed
                 InProgress = false;
             }
@@ -285,13 +276,6 @@ namespace IoTCoreDefaultApp
                 WebNextButton.IsEnabled = ContentView.CanGoForward;
 
                 InProgress = false;
-                /*
-                if (originalUrl.Length > 0 )
-                {
-                    WebAddressText.Text = originalUrl;
-                    originalUrl = string.Empty;
-                    DoWebNavigate();
-                }*/
             }
             else
             {
@@ -363,7 +347,7 @@ namespace IoTCoreDefaultApp
                 }
                 else
                 {   
-                    ContentView.Navigate(new Uri(Constants.WODUrl));
+                    ContentView.Navigate(new Uri(Constants.WindowsOnDevicesUrl));
                 }
             }
             catch (Exception e)

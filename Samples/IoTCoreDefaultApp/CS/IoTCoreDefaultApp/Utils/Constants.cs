@@ -15,9 +15,9 @@ namespace IoTCoreDefaultApp
             "GetCoding"
         };
 
-        public const string WODUrl = "WindowsOnDevices.com";
+        public const string WindowsOnDevicesUrl = "WindowsOnDevices.com";
         public const string IoTHacksterUrl = "Hackster.io/windowsiot";
-        public const string IoTGitHubUrl = "Github.com/ms-iot";
+        public const string IoTGitHubSamplesUrl = "GitHub.com/Microsoft/Windows-iotcore-samples";
         public const string BingHomePageUrl = "Bing.com";
         public const string IoTCoreManufacturingGuideUrl = "https://go.microsoft.com/fwlink/?linkid=865702";
 

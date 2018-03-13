@@ -105,16 +105,12 @@
 
                     <RichTextBlock Grid.Row="2">
                         <Paragraph>
-                            <InlineUIContainer>
-                                <TextBlock Text="{Binding [VisitText]}" Style="{StaticResource SubtitleTextBlockStyle}"/>
-                            </InlineUIContainer>
-                            <InlineUIContainer>
-                                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Foreground="{StaticResource AccentBrush}">
-                                    <Hyperlink Click="WindowsOnDevices_Click" ToolTipService.ToolTip="{Binding [WindowsOnDevicesUrlText]}" >
-                                        <Run Text="{Binding [Windows10IoTCoreText]}" />
-                                    </Hyperlink>
-                                </TextBlock>
-                            </InlineUIContainer>
+                            <Span>
+                               <Run Text="{Binding [VisitText]}"/>
+                               <Hyperlink Click="Hyperlink_Click" ToolTipService.ToolTip="{Binding [WindowsOnDevicesUrlText]}" NavigateUri="{Binding [WindowsOnDevicesUrlText]}">
+                                    <Run Text="{Binding [Windows10IoTCoreText]}" />
+                                </Hyperlink>
+                            </Span>
                         </Paragraph>
                     </RichTextBlock>
 
@@ -143,7 +139,7 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="72" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="16" />
+                        <RowDefinition Height="8" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="16" />
                     </Grid.RowDefinitions>
@@ -165,8 +161,20 @@
                         <TextBlock Text="{Binding [ConnectedDevicesText]}" Style="{StaticResource BaseTextBlockStyle}" />
                         <ItemsControl x:Name="ConnectedDevices" Foreground="{StaticResource PaleTextBrush}" />
                     </StackPanel>
-                    <StackPanel Grid.Row="6"  HorizontalAlignment="Right">
+                    <StackPanel Grid.Row="6" HorizontalAlignment="Right">
                         <TextBlock x:Name="AppxVersion" Style="{StaticResource BodyTextBlockStyle}" Foreground="{StaticResource PaleTextBrush}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="8" HorizontalAlignment="Right">
+                        <RichTextBlock>
+                            <Paragraph>
+                                <Span>
+                                    <Run Text="{Binding [IoTCoreDefaultAppSourceCodeBrowseText]}"/>
+                                    <Hyperlink Click="Hyperlink_Click" ToolTipService.ToolTip="{Binding [GitHubIoTCoreSamplesUrlText]}" NavigateUri="{Binding [IoTCoreDefaultAppSourceCodeUrlText]}" >
+                                        <Run Text="{Binding [GitHubIoTCoreSamplesUrlText]}" />
+                                    </Hyperlink>
+                                </Span>
+                            </Paragraph>
+                        </RichTextBlock>
                     </StackPanel>
                 </Grid>
             </Grid>

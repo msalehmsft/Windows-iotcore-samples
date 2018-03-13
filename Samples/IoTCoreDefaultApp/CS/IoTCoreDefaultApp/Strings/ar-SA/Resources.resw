@@ -209,11 +209,11 @@
   </data>
   <data name="VisitText" xml:space="preserve">
     <value>زورونا على الموقع</value>
-    <comment>Part of "Visit www.windowsondevices.com to start developing"</comment>
+    <comment>Part of "Start exploring Windows 10 IoT Core"</comment>
   </data>
   <data name="WindowsOnDevicesUrlText" xml:space="preserve">
-    <value> www.windowsondevices.com</value>
-    <comment>Part of "Visit www.windowsondevices.com to start developing"</comment>
+    <value>https://WindowsOnDevices.com</value>
+    <comment>Dont Localize</comment>
   </data>
   <data name="KeyboardTitleText" xml:space="preserve">
     <value>شكل لوحة المفاتيح</value>

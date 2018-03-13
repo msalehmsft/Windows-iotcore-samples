@@ -218,11 +218,11 @@
   </data>
   <data name="VisitText" xml:space="preserve">
     <value>Iniciar la exploración </value>
-    <comment>Part of "Start exploring WindowsOnDevices.com"</comment>
+    <comment>Part of "Start exploring Windows 10 IoT Core"</comment>
   </data>
   <data name="WindowsOnDevicesUrlText" xml:space="preserve">
-    <value>WindowsOnDevices.com</value>
-    <comment>Part of "Start exploring WindowsOnDevices.com"</comment>
+    <value>https://WindowsOnDevices.com</value>
+    <comment>Dont Localize</comment>
   </data>
   <data name="KeyboardTitleText" xml:space="preserve">
     <value>Distribución del teclado</value>

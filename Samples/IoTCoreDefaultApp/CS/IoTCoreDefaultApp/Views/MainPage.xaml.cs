@@ -15,6 +15,7 @@ using Windows.System;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Documents;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
@@ -181,9 +182,16 @@ namespace IoTCoreDefaultApp
               Package.Current.Id.Version.Revision);
         }
 
-        private void WindowsOnDevices_Click(object sender, RoutedEventArgs e)
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
-            NavigationUtils.NavigateToScreen(typeof(WebBrowserPage), Constants.WODUrl);
+            Hyperlink hyperlink = sender as Hyperlink;
+
+            if (hyperlink == null || hyperlink.NavigateUri == null)
+            {
+                return;
+            }
+
+            NavigationUtils.NavigateToScreen(typeof(WebBrowserPage), hyperlink.NavigateUri);
         }
 
         private async void UpdateNetworkInfo()
